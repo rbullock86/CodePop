@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="home-main d-inline-block">
+    This is the home layout!
+    @RenderBody()
+</div>
+<div class="home-right d-inline-block">
+    @await Html.PartialAsync("~/Views/Home/RightPanel.cshtml")
+</div>
