@@ -10,30 +10,42 @@
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
-<div>
-    @await Html.PartialAsync("~/Views/Shared/TopNavBar.cshtml")
+<div class="topbar-container">
+    <nav class="topbar">
+        <div>This is the topbar</div>
+        <div class="topbar-link-container">
+            <a class="btn btn-primary" href="#">Test</a>
+            <a class="btn btn-purple-outline topbar-link" href="#">Log In</a>
+            <a class="btn btn-purple topbar-link" href="#">Sign In</a>
+        </div>
+    </nav>
 </div>
-
-    <partial name="_CookieConsentPartial" />
-
-<div class="row main-body">
-    <div class="hidden-xs d-inline-block">
-        @await Html.PartialAsync("~/Views/Shared/SideNavBar.cshtml");
+<div class="main-container">
+    <div class="main">
+        <div class="main-sidebar">
+            <ul>
+                <li>Home</li>
+                <li>Public</li>
+                <li>Tags</li>
+                <li>Users</li>
+            </ul>
+        </div>
+        <div class="main-body">
+            @RenderBody()
+            <hr/>
+            <footer>
+                <p>&copy; 2019 - CodePop</p>
+            </footer>
+        </div>
     </div>
-    <div class="container body-content d-inline-block">
-        @RenderBody()
-        <hr/>
-        <footer>
-            <p>&copy; 2019 - CodePop</p>
-        </footer>
-    </div>
+
 </div>
 
     <environment include="Development">
@@ -48,7 +60,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
         </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                 crossorigin="anonymous"

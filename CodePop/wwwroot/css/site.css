@@ -1,100 +1,129 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+:root {
+    --purp1: rgba(159, 0, 159, 1);
+    --purp2: rgba(127, 0, 127, 1);
+    --purp3: rgba(95, 0, 95, 1);
+}
+
+.btn-purple {
+    background-color: var(--purp1);
+    border: 2px solid var(--purp1);
+    color: white;
+}
+
+    .btn-purple:hover {
+        background-color: var(--purp2);
+        color: white;
+    }
+
+.btn-purple:active {
+    background-color: var(--purp3);
+    color: white;
+}
+
+.btn-purple-outline {
+    background-color: transparent;
+    border: 2px solid var(--purp1);
+    color: var(--purp2);
+}
+
+    .btn-purple-outline:hover {
+        background-color: var(--purp2);
+        color: white;
+    }
+
+.btn-purple-outline:active {
+    background-color: var(--purp3);
+}
+
+
 body {
     margin: 0 auto;
 }
 
-li a {
-    color: #333;
-}
-
-.main-body {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    max-width: 1200px;
-    padding: 15px;
-    width: calc(100% - 180px);
-}
-
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
-
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-
-/* Generic Display Classes */
-.d-inline-block {
-    display: inline-block;
-    vertical-align: top;
-}
-
-
-/* Layout Classes */
-.side-navbar {
-    width: 150px;
-    padding: 15px;
-    margin-left: 15px;
-    border-right: 1px solid darkgrey;
-}
-
-.side-navbar-public {
-    list-style-type: none;
-}
-
-.top-navbar-container {
-    background-color: rgb(240, 240, 240);
-    width: 100%;
-    max-height: 340px;
-    margin: 0;
-    border-top: 4px solid darkorchid;
-    border-bottom: 1px solid darkgrey;
-    color: black;
-}
-
-.top-navbar {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.top-navbar a {
-    color: #333;
-}
-
-/* Home View Classes */
-
-.home-main {
-    width: 100%;
-}
-
-@media screen and (max-width: 991px) {
-    .home-right {
+@media screen and (max-width: 768px) {
+    .hidden-md {
         display: none;
     }
 }
 
-@media screen and (min-width: 992px) {
-    .home-main {
-        width: calc(100% - 270px);
-    }
+.topbar-container {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-top: 3px solid var(--purp1);
+    background-color: lightgray;
+    border-bottom: 1px solid black;
+}
 
-    .home-right {
-        padding: 0 15px;
-        width: 240px;
+.topbar {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+
+.topbar * {
+    display: inline-block;
+}
+
+
+.topbar-link-container {
+    display: inline-block;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 0;
+    float: right;
+}
+
+.topbar-link {
+    margin: 3px 4px;
+}
+
+
+.main-container {
+    position: fixed;
+    width: 100%;
+    top: 50px;
+    left: 0;
+}
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-sidebar {
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid black;
+    line-height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .main-sidebar {
+        display: none;
     }
+}
+
+.main-sidebar ul {
+    list-style: none;
+    padding: 5px;
+}
+
+.main-body {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
 }
