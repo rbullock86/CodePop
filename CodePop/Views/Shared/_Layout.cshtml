@@ -6,38 +6,56 @@
     <title>@ViewData["Title"] - CodePop</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/slick.css"/>
+        <link rel="stylesheet" href="~/css/all.css"/>
+        <link rel="stylesheet" href="~/css/site.css"/>
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/all.css" />
     </environment>
 </head>
 <body>
 <div class="topbar-container">
-    <nav class="topbar">
-        <div>This is the topbar</div>
-        <div class="topbar-link-container">
-            <a class="btn btn-primary" href="#">Test</a>
-            <a class="btn btn-purple-outline topbar-link" href="#">Log In</a>
-            <a class="btn btn-purple topbar-link" href="#">Sign In</a>
+    <div class="row topbar">
+        <div class="col xs-show">
+            <button id="topbar-dropdown" class="button btn-purple-outline topbar-link">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
         </div>
-    </nav>
+        <div class="col">
+            <a class="button topbar-logo" href="/">CodePop
+            </a>
+        </div>
+        <div class="col fill topbar-search xs-hide">
+            <form class="col row fill">
+                <input class="col fill" type="text"/>
+                <button type="submit" class="button col transparent topbar-icon topbar-search-icon">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+            </form>
+        </div>
+        <div class="col move-right">
+            <a class="button btn-purple-outline topbar-link" href="#">Log In</a>
+            <a class="button btn-purple topbar-link" href="#">Sign In</a>
+        </div>
+    </div>
 </div>
 <div class="main-container">
-    <div class="main">
-        <div class="main-sidebar">
+    <div class="main row align-top">
+        <nav id="sidebar" class="main-sidebar col xs-hide list-unstyled">
             <ul>
-                <li>Home</li>
-                <li>Public</li>
-                <li>Tags</li>
-                <li>Users</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Questions</a></li>
+                <li><a href="#">Tags</a></li>
+                <li><a href="#">Users</a></li>
             </ul>
-        </div>
-        <div class="main-body">
+        </nav>
+        <div class="container col main-body fill">
             @RenderBody()
             <hr/>
             <footer>
